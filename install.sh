@@ -23,29 +23,6 @@ install_3proxy() {
     mkdir -p /usr/local/etc/3proxy/{bin,logs,stat}
     cp bin/3proxy /usr/local/etc/3proxy/bin/
 
-    cat >/usr/lib/systemd/system/3proxy.service <<EOF
-[Unit]
-Description=3proxy tiny proxy server
-Documentation=man:3proxy(1)
-After=network.target
-
-[Service]
-ExecStart=/usr/local/etc/3proxy/bin/3proxy /usr/local/etc/3proxy/3proxy.cfg &
-ExecReload=/bin/kill -SIGUSR1 $MAINPID
-KillMode=process
-Restart=on-failure
-RestartSec=60s
-LimitNOFILE=9999999
-LimitNPROC=9999999
-
-[Install]
-WantedBy=multi-user.target
-Alias=3proxy.service
-EOF
-
-    systemctl daemon-reload
-    systemctl enable 3proxy
-
     echo "* hard nofile 999999" >>  /etc/security/limits.conf
     echo "* soft nofile 999999" >>  /etc/security/limits.conf
     echo "net.ipv6.conf.$NIC.proxy_ndp=1" >> /etc/sysctl.conf
