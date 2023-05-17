@@ -32,13 +32,13 @@ install_3proxy() {
 
 config_ipaddress() {
     cat >>/etc/sysconfig/network-scripts/ifcfg-eth0 <<EOF
-    IPV6INIT=yes
-    IPV6ADDR=${IP6}0/64
-    IPV6_DEFAULTGW=${GATEWAY}
-    IPV6_AUTOCONF=no
-    DNS1=2001:4860:4860::8844
-    DNS2=2001:4860:4860::8888
-    DNS3=209.244.0.3
+IPV6INIT=yes
+IPV6ADDR=${IP6}0/64
+IPV6_DEFAULTGW=${GATEWAY}
+IPV6_AUTOCONF=no
+DNS1=2001:4860:4860::8844
+DNS2=2001:4860:4860::8888
+DNS3=209.244.0.3
 EOF
 }
 
