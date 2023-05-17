@@ -71,7 +71,7 @@ EOF
 
 gen_data() {
     seq $FIRST_PORT $LAST_PORT | while read port; do
-        IDX=$(($((port - FIRST_PORT)) % 16))
+        IDX=$(($((port - FIRST_PORT + 1)) % 16))
         echo "$(random)/$(random)/$IP4/$port/$IP6${array[$IDX % 16]}"
     done
 }
@@ -108,7 +108,7 @@ echo "NIC = $NIC, Internal ip = ${IP4}. External sub for ip6 = ${IP6}"
 # echo "How many proxy do you want to create? Example 16"
 # read COUNT
 
-COUNT=16
+COUNT=14
 FIRST_PORT=10000
 LAST_PORT=$(($FIRST_PORT + $COUNT))
 
