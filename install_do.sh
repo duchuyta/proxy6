@@ -39,7 +39,7 @@ config_ipaddress() {
     DNS1=2001:4860:4860::8844
     DNS2=2001:4860:4860::8888
     DNS3=209.244.0.3
-EOF   
+EOF
 }
 
 gen_ifconfig() {
@@ -80,7 +80,7 @@ gen_iptables() {
     iptables -I INPUT -p tcp --dport 10013  -m state --state NEW -j ACCEPT
     iptables -I INPUT -p tcp --dport 10014  -m state --state NEW -j ACCEPT
     iptables -I INPUT -p tcp --dport 10015  -m state --state NEW -j ACCEPT
-EOF 
+EOF
 }
 
 gen_3proxy() {
@@ -120,7 +120,7 @@ gen_3proxy() {
     proxy -6 -n -a -p10014 -i${IP4} -e${IP6}e
     proxy -6 -n -a -p10015 -i${IP4} -e${IP6}f
     flush
-EOF 
+EOF
 }
 
 echo "installing apps"
@@ -140,8 +140,10 @@ chmod +x $WORKDIR/boot_*.sh /etc/rc.local
 gen_3proxy >/usr/local/etc/3proxy/3proxy.cfg
 
 cat >>/etc/rc.local <<EOF
-bash ${WORKDIR}/boot_iptables.sh
-bash ${WORKDIR}/boot_ifconfig.sh
-ulimit -n 65535
-/usr/local/etc/3proxy/bin/3proxy /usr/local/etc/3proxy/3proxy.cfg &
+    bash ${WORKDIR}/boot_iptables.sh
+    bash ${WORKDIR}/boot_ifconfig.sh
+    ulimit -n 65535
+    /usr/local/etc/3proxy/bin/3proxy /usr/local/etc/3proxy/3proxy.cfg &
 EOF
+
+echo "OK"
