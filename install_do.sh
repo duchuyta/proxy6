@@ -71,8 +71,8 @@ EOF
 
 gen_data() {
     seq $FIRST_PORT $LAST_PORT | while read port; do
-        IDX=$(($((port-FIRST_PORT))%16))
-        echo "$(random)/$(random)/$IP4/$port/$IP6$((array[IDX]))"
+        IDX=$(($((port - FIRST_PORT)) % 16))
+        echo "$(random)/$(random)/$IP4/$port/$IP6${array[$IDX % 16]}"
     done
 }
 
