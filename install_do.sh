@@ -44,21 +44,21 @@ EOF
 
 gen_ifconfig() {
     cat <<EOF
-${IP6}1/64
-${IP6}2/64
-${IP6}3/64
-${IP6}4/64
-${IP6}5/64
-${IP6}6/64
-${IP6}7/64
-${IP6}8/64
-${IP6}9/64
-${IP6}a/64
-${IP6}b/64
-${IP6}c/64
-${IP6}d/64
-${IP6}e/64
-${IP6}f/64
+ifconfig eth0 inet6 add ${IP6}1/64
+ifconfig eth0 inet6 add ${IP6}2/64
+ifconfig eth0 inet6 add ${IP6}3/64
+ifconfig eth0 inet6 add ${IP6}4/64
+ifconfig eth0 inet6 add ${IP6}5/64
+ifconfig eth0 inet6 add ${IP6}6/64
+ifconfig eth0 inet6 add ${IP6}7/64
+ifconfig eth0 inet6 add ${IP6}8/64
+ifconfig eth0 inet6 add ${IP6}9/64
+ifconfig eth0 inet6 add ${IP6}a/64
+ifconfig eth0 inet6 add ${IP6}b/64
+ifconfig eth0 inet6 add ${IP6}c/64
+ifconfig eth0 inet6 add ${IP6}d/64
+ifconfig eth0 inet6 add ${IP6}e/64
+ifconfig eth0 inet6 add ${IP6}f/64
 EOF
 }
 
