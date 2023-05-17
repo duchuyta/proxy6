@@ -1,0 +1,15 @@
+ifconfig eth0 inet6 add 2604:a880:400:d0::22d3:7001/64
+ifconfig eth0 inet6 add 2604:a880:400:d0::22d3:7002/64
+ifconfig eth0 inet6 add 2604:a880:400:d0::22d3:7003/64
+ifconfig eth0 inet6 add 2604:a880:400:d0::22d3:7004/64
+ifconfig eth0 inet6 add 2604:a880:400:d0::22d3:7005/64
+ifconfig eth0 inet6 add 2604:a880:400:d0::22d3:7006/64
+ifconfig eth0 inet6 add 2604:a880:400:d0::22d3:7007/64
+ifconfig eth0 inet6 add 2604:a880:400:d0::22d3:7008/64
+ifconfig eth0 inet6 add 2604:a880:400:d0::22d3:7009/64
+ifconfig eth0 inet6 add 2604:a880:400:d0::22d3:700a/64
+ifconfig eth0 inet6 add 2604:a880:400:d0::22d3:700b/64
+ifconfig eth0 inet6 add 2604:a880:400:d0::22d3:700c/64
+ifconfig eth0 inet6 add 2604:a880:400:d0::22d3:700d/64
+ifconfig eth0 inet6 add 2604:a880:400:d0::22d3:700e/64
+ifconfig eth0 inet6 add 2604:a880:400:d0::22d3:700f/64
