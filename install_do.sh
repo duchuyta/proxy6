@@ -120,7 +120,6 @@ gen_3proxy() {
     proxy -6 -n -a -p10014 -i${IP4} -e${IP6}e
     proxy -6 -n -a -p10015 -i${IP4} -e${IP6}f
     flush
-
 EOF 
 }
 
