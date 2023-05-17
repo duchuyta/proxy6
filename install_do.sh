@@ -31,7 +31,7 @@ install_3proxy() {
 }
 
 config_ipaddress() {
-    cat >>/etc/sysconfig/network-scripts/ifcfg-eth0 <<EOF
+    cat >>/etc/sysconfig/network-scripts/ifcfg-$NIC <<EOF
 IPV6INIT=yes
 IPV6ADDR=${IP6}0/64
 IPV6_DEFAULTGW=${GATEWAY}
@@ -44,21 +44,21 @@ EOF
 
 gen_ifconfig() {
     cat <<EOF
-ifconfig eth0 inet6 add ${IP6}1/64
-ifconfig eth0 inet6 add ${IP6}2/64
-ifconfig eth0 inet6 add ${IP6}3/64
-ifconfig eth0 inet6 add ${IP6}4/64
-ifconfig eth0 inet6 add ${IP6}5/64
-ifconfig eth0 inet6 add ${IP6}6/64
-ifconfig eth0 inet6 add ${IP6}7/64
-ifconfig eth0 inet6 add ${IP6}8/64
-ifconfig eth0 inet6 add ${IP6}9/64
-ifconfig eth0 inet6 add ${IP6}a/64
-ifconfig eth0 inet6 add ${IP6}b/64
-ifconfig eth0 inet6 add ${IP6}c/64
-ifconfig eth0 inet6 add ${IP6}d/64
-ifconfig eth0 inet6 add ${IP6}e/64
-ifconfig eth0 inet6 add ${IP6}f/64
+ifconfig $NIC inet6 add ${IP6}1/64
+ifconfig $NIC inet6 add ${IP6}2/64
+ifconfig $NIC inet6 add ${IP6}3/64
+ifconfig $NIC inet6 add ${IP6}4/64
+ifconfig $NIC inet6 add ${IP6}5/64
+ifconfig $NIC inet6 add ${IP6}6/64
+ifconfig $NIC inet6 add ${IP6}7/64
+ifconfig $NIC inet6 add ${IP6}8/64
+ifconfig $NIC inet6 add ${IP6}9/64
+ifconfig $NIC inet6 add ${IP6}a/64
+ifconfig $NIC inet6 add ${IP6}b/64
+ifconfig $NIC inet6 add ${IP6}c/64
+ifconfig $NIC inet6 add ${IP6}d/64
+ifconfig $NIC inet6 add ${IP6}e/64
+ifconfig $NIC inet6 add ${IP6}f/64
 EOF
 }
 
@@ -130,7 +130,7 @@ install_3proxy
 
 echo "working folder = /root/proxy-installer"
 WORKDIR="/root/proxy-installer"
-mkdir $WORKDIR && cd $_
+mkdir -p $WORKDIR && cd $_
 
 config_ipaddress
 gen_iptables >$WORKDIR/boot_iptables.sh
