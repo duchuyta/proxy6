@@ -24,8 +24,8 @@ install_3proxy() {
     echo "net.ipv6.ip_nonlocal_bind = 1" >> /etc/sysctl.conf
 
     sysctl -p
-    systemctl stop firewalld
-    systemctl disable firewalld
+    # systemctl stop firewalld
+    # systemctl disable firewalld
 
     cd $WORKDIR
 }
@@ -33,7 +33,8 @@ install_3proxy() {
 echo "installing apps"
 yum -y install gcc net-tools bsdtar zip make >/dev/null
 
+install_3proxy
+
 echo "working folder = /root/proxy-installer"
 WORKDIR="/root/proxy-installer"
-
-install_3proxy
+mkdir $WORKDIR && cd $_
