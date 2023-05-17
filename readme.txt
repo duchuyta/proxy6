@@ -18,6 +18,8 @@ DNS2=2001:4860:4860::8888
 DNS3=209.244.0.3
 
 sudo systemctl restart network
+
+/usr/local/etc/3proxy/3proxy.cfg
 ```
 
 
