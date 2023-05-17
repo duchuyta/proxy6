@@ -1,3 +1,10 @@
 // Centos 8
 curl -O https://raw.githubusercontent.com/duchuyta/proxy6/develop/install.sh
-bash install.sh "ens0" "2600:3c01:e000:07e8::/64"
+bash install.sh "eth0" "2600:3c01:e000:07e8::/64"
+
+
+// DO
+```
+curl -O https://raw.githubusercontent.com/duchuyta/proxy6/develop/install_do.sh
+bash install_do.sh "eth0"
+```
